@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+:root{
+    --text-color: rgb(2, 2, 11);
+    --bars-color: #e1f1e4;
+    --radius-px: 10px;
+    --button-shadow:4px 2px 2px white;
+    --shadow: 0px 2px 2px  var(--text-color);
+    --text-font-size: 0.5em;
+    --text-font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}   
+* { 
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 97vh;
+    display:grid;
+    font-size: var(--text-font-size);
+    margin: 10px;
+    background-color: rgb(247, 247, 251);
+    padding: 20px;
+    grid-template-columns: 30% 70%;
+    text-align: center;
+    justify-content: center;
+}
+.container{
+    padding: 20px 20px;
+    align-items: center;
+    height: 100%;
+}
+ 
+.box{
+    /* margin: auto o; */
+    width: 100%;
+    height: 100%;
+    /* margin-top: 20%; */
+    padding-top: 30%;
+    border-color: var(--text-color);
+    border-right: dashed;
+
+    
+}
+
+.container .tasks{
+    height: 100%;
+    font-family: var(--text-font-family);
+    background-color: var(--bars-color);
+    border-radius: var(--radius-px);
+    box-shadow: var(--shadow);
+    font-size: 20px;
+    align-items: center;
+    
+}
+.container #tasks ul li{
+    color: var(--text-color);
+    list-style: none;
+    font-family: var(--text-font-family);
+}
+.container #tasks ul li label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 15px 0;
+}
+.container #tasks ul li label.priorityLabel{
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.container #tasks ul li #taskName {
+    padding: 10px 10px;
+    width: 70%;
+    border-radius: var(--radius-px);
+    border-color: var(--text-color);
+    border: 1px;
+}
+.container #tasks ul li #taskDescription  {
+    height: 200px;
+    width: 80%;
+    padding: 10px;
+    resize: none;
+    /* display: block; */
+    /* align-items: center;
+    justify-content: center; */
+    /* text-align: left; */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    border-radius: var(--radius-px);
+    border-color: var(--text-color);
+    border: 1px;
+    box-shadow:  var(--shadow);
+}
+
+.container #tasks ul li #taskName:hover,
+.container #tasks ul li input{
+    box-shadow:  var(--shadow);
+}
+.container #tasks ul li #taskPriority{
+    accent-color: var(--text-color);
+    color: var(--text-color);
+    border-color: var(--text-color);
+    width: 15%;
+    border-radius: var(--radius-px);
+    text-align: center;
+ }
+ .container #tasks ul li button{
+    width: 20%;
+    height: 35px;
+    margin-top: 90px;
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: var(--radius-px);
+    border-color: var(--shadow);
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 15px;
+
+}
+.container #tasks ul li:last-of-type input:hover{
+    background-color: var(--text-color);
+    color: white;
+    box-shadow:  var(--button-shadow);
+}
+.container #tasks ul li:first-of-type label{
+    padding-top: 35px;
+}
+.container #taskLi{
+    
+    display: grid;
+    grid-template-rows:  auto auto;
+    list-style: none;
+}
+
+.container #taskLi  div.dash{
+    padding: 5px;
+    border-bottom: dashed;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.container #taskLi h1{
+    font-size: 25px;
+    padding-bottom: 10px;
+    font-family: var(--text-font-family);
+}
+.container #taskLi #unfinishedTasks ,
+.container #taskLi #finishedTasks {
+    display: grid;
+    grid-template-columns:  50% 50%;
+    list-style: none;
+}
+.sortedTasks {
+    font-size: 20px;
+    color: var(--text-color);
+    background: var(--bars-color);
+    border-radius: var(--radius-px);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    margin: 10px;
+    height: 90%;
+    display: grid;
+    grid-auto-rows: auto 1fr auto;
+}
+.sortedTasks .taskDec{
+    margin-bottom: 20px;
+}
+.sortedTasks .taskInfo,
+.sortedTasks .taskInfo .taskColor{
+    display: inline-flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.sortedTasks .taskInfo .taskPriorityDisplay,
+.sortedTasks .status{
+    display: inline-flex;
+    gap: 30px;
+    height: 35px;
+    justify-content: center;
+}
+.sortedTasks .status div{
+    color: var(--text-color);
+    font-size: 22px;
+}
+.sortedTasks .taskInfo .taskPriorityDisplay p{
+    padding-top: 5px;  
+}
+.sortedTasks .taskInfo .taskPriorityDisplay .para{
+    width: fit-content;
+    padding: 5px 10px 0 10px;
+    background-color: #fff;
+    border-radius: var(--radius-px);
+    box-shadow: var(--shadow);
+}
+/* .sortedTasks .icon .dots, */
+.container img.check{
+    margin-left: 70px;
+}
+.sortedTasks .space .icon, 
+nav .icon .fa-x, 
+#container .icon .fa-x{
+    font-size: 20px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+.sortedTasks .icon {
+   margin-left: 25%;
+}
+.sortedTasks .icon .fa-hourglass-half{
+    font-size: 20px;
+    color: var(--text-color);
+    padding: 5px;
+    background-color: #fff;
+    border-radius: var(--radius-px);
+}
+nav{
+    position: absolute;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+   background-color: var(--bars-color);
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: 0.8s;
+    transform: translateY(-1000%);
+    font-family: var(--text-font-family);
+    font-weight: bold;
+}
+nav.open{
+    transform: translate(70%, -20%);
+    margin-bottom: 20px;
+}
+#container .icon{
+    position: fixed;
+    padding-left: 15px;
+    padding-bottom: 400px ;
+}
+nav .icon .fa-x:hover, 
+#container .icon .fa-x:hover {
+    background-color: rgba(131, 131, 210, 0.459);
+    border-radius: var(--radius-px);
+}
+nav button,
+nav .value,
+button.delete,
+button.done,
+button.uncompleted {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 20px;
+    transition: 0.3s;
+    width: 110px;
+    height: 35px;
+    background-color: white;
+    border-radius: var(--radius-px);
+    border-color: var(--shadow);
+    font-weight: bold;
+    font-size: 15px;
+    display: inline-block;
+}
+#open .icon{
+    position: relative;
+    left: -100px;
+}
+nav button{
+    margin-top: 20px;
+}
+div.space{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 30px;
+}
+nav .value{
+    width: 200px;
+    font-size: 40px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.container #tasks ul li button:hover, 
+nav button:hover,
+button.delete:hover,
+button.done:hover,
+button.uncompleted:hover {
+   background-color: rgba(131, 131, 210, 0.459);
+   border-radius: var(--radius-px);
+}
+
+#container {
+    position: fixed;
+    width: 50%;
+    left: 25%;
+    padding: 20px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-size:36px;
+    font-weight:bold;
+    bottom:45%;
+    align-items: center;
+    display:block;
+    background-color: white;
+    box-shadow: 0px 2px 2px  var(--text-color);
+    border-radius: 20px;
+    transition: 0.8s;
+    transform: translateY(-4000%);
+  }
+  #container .icon{
+   position: absolute;
+  }
+  #container .icon .fa-x{
+     position: fixed;
+     font-size: 20px;
+    left: 20px;
+    top: 20px;
+  }
+  #container.open{
+    transform: translateY(0);
+  }
+  #flip {
+    height:50px;
+    overflow:hidden;
+  }
+  #flip > div > div {
+    color:#fff;
+    padding:4px 12px;
+    height:45px;
+    margin-bottom:49px;
+    display:inline-block;
+  }
+  #flip div:first-child {
+    animation: show 3s linear infinite;
+  }
+  
+  #flip div div {
+    background:var(--text-color);
+  }
+  #flip div:first-child div {
+    background:rgba(255, 0, 0, 0.575);
+  }
+  #flip div:last-child div {
+    background:rgba(255, 136, 0, 0.575);
+  }
+  
+  @keyframes show {
+    0% {margin-top:-270px;}
+    5% {margin-top:-180px;}
+    33% {margin-top:-180px;}
+    38% {margin-top:-90px;}
+    66% {margin-top:-90px;}
+    71% {margin-top:0px;}
+    99.99% {margin-top:0px;}
+    100% {margin-top:-270px;}
+  }
+  .movingArrow{
+    margin-top: 10px;
+    width: 60px;
+    height: 30px;
+    display: inline-block;
+    color: rgba(255, 0, 0, 0.604);
+    font-size: 25px;
+    animation: move 1s linear infinite;
+  }
+  @keyframes move {
+    0% {transform: translateX(0);}
+    20% {transform: translateX(10px);}
+    40% {transform: translateX(20px);}
+    60% {transform: translateX(30px);}
+    80% {transform: translateX(40px);}
+    100% {transform: translateX(0);}
+  }
+  .container .fa-check {
+    color: var(--text-color);
+   font-size: 35px;
+
+    margin-left: 20px;
+  }
+  
+#unfinishedTasks .status,
+ #finishedTasks button.done,
+ #finishedTasks .sortedTasks .taskInfo,
+ #unfinishedTasks button.uncompleted,
+ #finishedTasks .sortedTasks .icon .fa-hourglass-half{
+    display: none;
+}
+ /* img.checked{
+    display: contents; 
+
+} */
+
+strong{
+    font-size: larger;
+    font-style: inherit;
+    border-bottom: dashed;
+}
+#color,
+.sortedTasks .status div{
+    margin-top: 5px;
+  padding: 2px 10px 2px 10px;
+  width: fit-content;
+  height: fit-content;
+  background-color: #fff;
+  border-radius: var(--radius-px);
+  box-shadow: var(--button-shadow);
+}
+.sortedTasks .taskInfo .taskColor .red{
+    border: 2px solid rgba(255, 0, 0, 0.575);
+}
+.sortedTasks .taskInfo .taskColor  .orange{
+    border: 2px solid rgba(255, 136, 0, 0.575);
+}
+.sortedTasks .taskInfo .taskColor  .yellow{
+   
+    border: 2px solid rgba(255, 213, 0, 0.575);
+}
+#taskDeadline,
+#taskTimeDeadline{
+    border-radius: var(--radius-px);
+    padding: 5px;
+    color: var(--text-color);
+    border-color: transparent;
+    height: 40px;
+    width: 40%;
+    text-align: center;
+}
+#taskTimeDeadline{
+    width: 25%;
+}
+@media (max-width: 1500px) {
+    .container #taskLi #unfinishedTasks ,
+    .container #taskLi #finishedTasks{
+    
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: center;
+      
+    }
+    body{
+        height: 100%;
+        width: 100%;
+    }
+}
+@media (max-width: 1000px) {
+    .container #taskLi{
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    body{
+        padding: 0;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: center;
+        width: 95%;
+        justify-self: center;
+    }
+    .box{
+        width: 95%;
+        border: none;
+    }
+    .container{
+        margin: 10px;
+        padding: 10px;
+        
+    }
+    .movingArrow{
+        font-size: 15px;
+        width: 20%;
+       
+    }
+    .sortedTasks .taskInfo .taskColor{
+        display: flex;
+        gap: 15px;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .sortedTasks .taskInfo {
+        gap: 10px;
+        flex-direction: column;
+        transform: translateX(-10px);
+    }
+    #container.open{
+        font-size: 20px;
+        width: 70%;
+        transform: translate(-40px, 0);
+    }
+    @keyframes move {
+        0% {transform: translateX(-20px);}
+        20% {transform: translateX(-10px);}
+        40% {transform: translateX(0px);}
+        60% {transform: translateX(10px);}
+        80% {transform: translateX(20px);}
+        100% {transform: translateX(-20px);}
+      }
+    /* .container #taskLi #unfinishedTasks ,
+    .container #taskLi #finishedTasks{
+        width: 90%;
+    } */
+}
+/* .dragging {
+    opacity: 0.7;
+    cursor: move;
+  }
+  .task-nav {
+    position: absolute; /* Ensure the nav can be moved */
+    /* cursor: move; /* Show a move cursor */
+    /* z-index: 999; Optional, to bring it to the front
+  }
+   */ 
